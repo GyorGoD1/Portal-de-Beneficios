@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Beneficios</title>
+    <style>
+        /* Centrar horizontalmente y permitir scroll si es necesario */
+        body {
+            display: flex;
+            justify-content: center; /* Centrado horizontal */
+            margin: 0; /* Sin márgenes */
+            font-family: Arial, sans-serif;
+            background-color: #12a48e; /* Fondo suave */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px; /* Limitar ancho del contenido */
+            text-align: left; /* Mantener texto alineado a la izquierda */
+            padding: 20px;
+            background: #fff; /* Fondo blanco */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+            border-radius: 10px; /* Bordes redondeados */
+        }
+
+        h1, h2 {
+            text-align: center; /* Centrar títulos */
+        }
+
+        form {
+            margin-bottom: 10px; /* Separación entre formularios */
+        }
+
+        input, select, button {
+            display: block;
+            width: 100%; /* Ocupa todo el ancho del contenedor */
+            margin: 10px 0; /* Espaciado entre elementos */
+            padding: 10px; /* Espaciado interno */
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        button {
+            background-color: #af4ca7; /* Color del botón */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6fc11e; /* Color en hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Beneficios Gimnasio Municipal de Vitacura</h1>
+        <form id="validar-form" action="/validar" method="POST">
+            <label for="rut">Ingrese su RUT:</label>
+            <input type="text" id="rut" name="rut" required><br>
+
+            <label for="documento_identidad">Ingrese documento de Identidad:</label>
+            <input type="file" id="documento_identidad" name="documento_identidad" required><br>
+
+            <label for="cuenta_servicio">Ingrese cuenta de Servicio validador de dirección:</label>
+            <input type="file" id="cuenta_servicio" name="cuenta_servicio" required><br>
+
+            <button type="submit">Verificar Beneficios</button>
+        </form>
+
+        <h2>Registrar Nuevo Socio</h2>
+        <form id="registro-form" action="/registrar" method="POST">
+            <label for="rut">RUT (Sin puntos y con guión):</label>
+            <input type="text" id="rut" name="rut" required><br>
+            
+            <label for="nombre">Nombres:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+            
+            <label for="paterno">Apellido Paterno:</label>
+            <input type="text" id="paterno" name="paterno" required><br>
+            
+            <label for="materno">Apellido Materno:</label>
+            <input type="text" id="materno" name="materno" required><br>
+            
+            <label for="fecha_nacimiento">Fecha de Nacimiento (dd-mm-aaaa):</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+            
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required><br>
+            
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required><br>
+            
+            <label for="tipo_vecino">¿Es vecino de Vitacura?</label>
+            <select id="tipo_vecino" name="tipo_vecino" required>
+                <option value="VECINO">VECINO</option>
+                <option value="NO VECINO">NO VECINO</option>
+            </select><br>
+            
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
